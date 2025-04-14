@@ -13,13 +13,13 @@ import { CartProvider } from './context/CartContext';
 import { UserContext } from './context/UserContext'; 
 import { UserProvider } from './context/UserContext';
 
-// Componente para proteger rutas
+
 const ProtectedRoute = ({ children }) => {
   const { token } = useContext(UserContext);
   return token ? children : <Navigate to="/login" />;
 };
 
-// Componente para redirigir si el usuario está autenticado
+
 const AuthRedirect = ({ children }) => {
   const { token } = useContext(UserContext);
   return token ? <Navigate to="/" /> : children;

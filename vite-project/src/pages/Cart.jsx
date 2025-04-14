@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import '../assets/style/Cart.css';
 import { useCart } from '../context/CartContext';
-import { UserContext } from '../context/UserContext'; // Importa el UserContext
+import { UserContext } from '../context/UserContext'; 
 
 function Cart() {
   const { cart, updateQuantity, removeFromCart, calculateTotal } = useCart();
-  const { token } = useContext(UserContext); // Consume el UserContext para obtener el token
+  const { token } = useContext(UserContext); 
 
   const increaseQuantity = (pizzaId) => {
     const pizza = cart.find((item) => item.id === pizzaId);
@@ -54,7 +54,7 @@ function Cart() {
       <button
         className="pay-button"
         disabled={!token} // Deshabilita el botón si el token es false
-        style={{ opacity: !token ? 0.5 : 1, cursor: !token ? 'not-allowed' : 'pointer' }} // Estilos visuales para indicar que está deshabilitado
+        style={{ opacity: !token ? 0.5 : 1, cursor: !token ? 'not-allowed' : 'pointer' }} 
       >
         Pagar
       </button>
